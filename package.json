@@ -1,0 +1,12 @@
+{
+  "name": "basketball-sneakers",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/edumenu/basketballSneakers-mern.git",
+  "author": "Edem Dumenu <ehdemdume@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
