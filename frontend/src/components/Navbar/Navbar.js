@@ -11,7 +11,7 @@ import {
 	Fab
 } from '@material-ui/core';
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
-import HomeIcon from '@material-ui/icons/Home';
+// import HomeIcon from '@material-ui/icons/Home';
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import BackToTop from '../BackToTop/BackToTop';
@@ -31,7 +31,6 @@ const useStyles = makeStyles({
 	linkText: {
 		textDecoration: `none`,
 		textTransform: `uppercase`,
-		fontSize: `5px`,
 		color: `white`,
 		fontSize: 15
 	}
@@ -53,9 +52,9 @@ const Header = () => {
 		<React.Fragment>
 			<Paper>
 				<HideOnScroll>
-					<AppBar position='fixed' color='primary'>
+					<AppBar position='fixed' style={{ backgroundColor: '#1f242a' }}>
 						<Toolbar component='nav'>
-							<Container maxWidth='lg' className={classes.navbarDisplayFlex}>
+							<Container maxWidth='xl' className={classes.navbarDisplayFlex}>
 								<IconButton edge='start' aria-label='home'>
 									<a href='/' style={{ color: `white` }}>
 										{/* <HomeIcon fontSize='large' /> */}
@@ -68,7 +67,7 @@ const Header = () => {
 										{navLinks.map(({ title, path }) => (
 											<a href={path} key={title} className={classes.linkText}>
 												<ListItem button>
-													<ListItemText primary={title} disableTypography />
+													<ListItemText primary={title} />
 												</ListItem>
 											</a>
 										))}

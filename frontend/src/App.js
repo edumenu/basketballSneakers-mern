@@ -1,6 +1,6 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import orange from '@material-ui/core/colors/orange';
 

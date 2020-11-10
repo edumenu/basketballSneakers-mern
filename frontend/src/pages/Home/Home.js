@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
 import MainWallpaper from '../../components/MainWallpaper/MainWallpaper';
+import SampleShoes from '../../components/SampleShoes/SampleShoes';
+import VideoHighlights from '../../components/VideoHighlights/VideoHighlights';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -27,7 +29,17 @@ function Home() {
 						</Paper>
 					</Grid>
 					<Grid item>
-						<Paper className={classes.paper} style={{ backgroundColor: '#9a0000' }} />
+						<Paper className={classes.paper} style={{ backgroundColor: '#1f242a' }}>
+							<SampleShoes />
+						</Paper>
+					</Grid>
+					<Grid item>
+						<Paper className={classes.paper} style={{ backgroundColor: '#000000' }}>
+							<VideoHighlights />
+						</Paper>
+					</Grid>
+					<Grid item>
+						<Paper className={classes.paper} style={{ backgroundColor: '#1f242a' }} />
 					</Grid>
 				</Grid>
 			</div>
