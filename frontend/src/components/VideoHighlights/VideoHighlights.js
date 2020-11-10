@@ -40,41 +40,24 @@ const CustomizedBreadcrumbs = () => {
 		setUrlIndex(urlNum);
 	}
 
+	const breadCrumbs = [ { label: `Jordan` }, { label: `Kobe` }, { label: `Lebron` }, { label: `Kyrie` } ];
+
 	return (
 		<div className='breadCrumbs'>
 			<Container maxWidth='xl'>
 				<Breadcrumbs aria-label='breadcrumb'>
-					<StyledBreadcrumb
-						component='a'
-						href='#'
-						label='Jordan'
-						icon={<SportsBasketballIcon fontSize='small' />}
-						onClick={(e) => handleClick(e, 0)}
-					/>
-					<StyledBreadcrumb
-						component='a'
-						href='#'
-						label='Kobe'
-						icon={<SportsBasketballIcon fontSize='small' />}
-						onClick={(e) => handleClick(e, 1)}
-					/>
-					<StyledBreadcrumb
-						component='a'
-						href='#'
-						label='Lebron'
-						icon={<SportsBasketballIcon fontSize='small' />}
-						onClick={(e) => handleClick(e, 2)}
-					/>
-					<StyledBreadcrumb
-						component='a'
-						href='#'
-						label='Kyrie'
-						icon={<SportsBasketballIcon fontSize='small' />}
-						onClick={(e) => handleClick(e, 3)}
-					/>
+					{breadCrumbs.map(({ label }, index) => (
+						<StyledBreadcrumb
+							key={index}
+							component='a'
+							href='#'
+							label={label}
+							icon={<SportsBasketballIcon fontSize='small' />}
+							onClick={(e) => handleClick(e, index)}
+						/>
+					))}
 				</Breadcrumbs>
 				<h1 style={fontStyle}>Highlights</h1>
-
 				<VideoPlayer urlIndex={urlIndex} />
 			</Container>
 		</div>

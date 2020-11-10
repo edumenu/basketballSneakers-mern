@@ -39,7 +39,7 @@ const useStyles = makeStyles({
 const navLinks = [
 	{ title: `Shoe samples`, path: `#sample-sneakers`, icon: `sports_basketball` },
 	{ title: `Video Highlights`, path: `#video-highlights`, icon: `video_library` },
-	{ title: `Player stats`, path: `#stats`, icon: `assignment` },
+	{ title: `Career stats`, path: `#stats`, icon: `assignment` },
 	{ title: `Shop`, path: `/shop`, icon: `storefront` },
 	{ title: `login`, path: `/login`, icon: `login` },
 	{ title: `signup`, path: `/signup`, icon: `person_add` }
