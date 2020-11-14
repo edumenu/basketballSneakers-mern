@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player/lazy';
+import PropTypes from 'prop-types';
 
 import './VideoPlayer.css';
 
@@ -27,5 +28,9 @@ function VideoPlayer({ urlIndex }) {
 		</div>
 	);
 }
+
+VideoPlayer.propTypes = {
+	urlIndex: PropTypes.number.isRequired
+};
 
 export default VideoPlayer;

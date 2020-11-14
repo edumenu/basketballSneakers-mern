@@ -10,7 +10,7 @@ import Home from './pages/Home/Home';
 function App() {
 	const theme = createMuiTheme({
 		palette: {
-			type: 'dark',
+			type: 'light',
 			primary: {
 				// light: will be calculated from palette.primary.main,
 				main: '#212121'

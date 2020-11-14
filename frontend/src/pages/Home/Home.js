@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import MainWallpaper from '../../components/MainWallpaper/MainWallpaper';
 import SampleShoes from '../../components/SampleShoes/SampleShoes';
 import VideoHighlights from '../../components/VideoHighlights/VideoHighlights';
+import PlayerStatus from '../../components/PlayerStats/PlayerStatus';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -39,7 +40,14 @@ function Home() {
 						</Paper>
 					</Grid>
 					<Grid item>
-						<Paper className={classes.paper} style={{ backgroundColor: '#1f242a' }} />
+						<Paper className={classes.paper} style={{ backgroundColor: '#1f242a' }}>
+							<PlayerStatus />
+						</Paper>
+					</Grid>
+					<Grid item>
+						<Paper className={classes.paper} style={{ backgroundColor: '#3e242c' }}>
+							{/* <PlayerStatus /> */}
+						</Paper>
 					</Grid>
 				</Grid>
 			</div>

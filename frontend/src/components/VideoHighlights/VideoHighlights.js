@@ -32,9 +32,6 @@ const fontStyle = {
 const CustomizedBreadcrumbs = () => {
 	const [ urlIndex, setUrlIndex ] = useState(Math.floor(Math.random() * 3 + 0));
 
-	// useEffect(() => {
-	// }, []);
-
 	function handleClick(event, urlNum) {
 		event.preventDefault();
 		setUrlIndex(urlNum);
