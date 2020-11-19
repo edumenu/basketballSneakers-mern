@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import { makeStyles, Grid, List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
 import CakeIcon from '@material-ui/icons/Cake';
 import HomeIcon from '@material-ui/icons/Home';
 import PersonIcon from '@material-ui/icons/Person';
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 
 import Avatar from '../Avatar/Avatar';
 import { playerData } from './PlayerData';
@@ -21,6 +13,9 @@ import StatsCardRow from '../PlayerProfileCard/StatsCardRow';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1
+	},
+	playerStats: {
+		marginTop: '40px'
 	},
 	paper: {
 		padding: theme.spacing(1),
@@ -37,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PlayerProfileCard(props) {
 	const [ playerObj, setPlayerObj ] = useState({});
+	const [ playerInfoObj, setplayerInfoObj ] = useState({});
 	const classes = useStyles();
 
 	useEffect(
@@ -54,20 +50,29 @@ export default function PlayerProfileCard(props) {
 			if (index === 2) return ts.Lebron[0];
 			if (index === 3) return ts.Kyrie[0];
 		});
-		return setPlayerObj(playerObj);
+
+		let playerInfoObj = playerData.map((ts) => {
+			if (index === 0) return ts.Jordan[1];
+			if (index === 1) return ts.Kobe[1];
+			if (index === 2) return ts.Lebron[1];
+			if (index === 3) return ts.Kyrie[1];
+		});
+
+		setPlayerObj(playerObj);
+		setplayerInfoObj(playerInfoObj);
 	};
 
 	return (
 		<div>
 			<div className={classes.root}>
 				<Grid container spacing={1}>
-					<Grid item xs={4} alignItems='center'>
+					<Grid item xs={10} md={4} lg={4} alignItems='start' className={classes.playerStats}>
 						<Avatar
 							imageUrl={Object.keys(playerObj).length === 0 ? avatar : playerObj[0].profileImage}
 							imageSize='large'
 						/>
 					</Grid>
-					<Grid item xs={6} alignItems='center'>
+					<Grid item xs={10} md={6} lg={6} className={classes.playerStats} alignItems='center'>
 						<h1>Player Summary Stats</h1>
 						<div className={classes.demo}>
 							<List>
@@ -75,36 +80,42 @@ export default function PlayerProfileCard(props) {
 									<ListItemIcon>
 										<PersonIcon />
 									</ListItemIcon>
-									<ListItemText primary={Object.keys(playerObj).length === 0 ? avatar : playerObj[0].name} />
+									<ListItemText primary={Object.keys(playerInfoObj).length === 0 ? avatar : playerInfoObj[0].name} />
 								</ListItem>
 								<ListItem>
 									<ListItemIcon>
 										<CakeIcon />
 									</ListItemIcon>
-									<ListItemText primary={Object.keys(playerObj).length === 0 ? avatar : playerObj[0].Birthday} />
+									<ListItemText
+										primary={Object.keys(playerInfoObj).length === 0 ? avatar : playerInfoObj[0].Birthday}
+									/>
 								</ListItem>
 								<ListItem>
 									<ListItemIcon>
 										<HomeIcon />
 									</ListItemIcon>
-									<ListItemText primary={Object.keys(playerObj).length === 0 ? avatar : playerObj[0].Hometown} />
+									<ListItemText
+										primary={Object.keys(playerInfoObj).length === 0 ? avatar : playerInfoObj[0].Hometown}
+									/>
 								</ListItem>
 								<ListItem>
 									<ListItemIcon>
 										<SportsBasketballIcon />
 									</ListItemIcon>
-									<ListItemText primary={Object.keys(playerObj).length === 0 ? avatar : playerObj[0].Position} />
+									<ListItemText
+										primary={Object.keys(playerInfoObj).length === 0 ? avatar : playerInfoObj[0].Position}
+									/>
 								</ListItem>
 							</List>
 						</div>
 					</Grid>
-					<Grid container item xs={12} spacing={3}>
+					<Grid container item xs={14} md={14} lg={12} spacing={1}>
 						<StatsCardRow rowNum={1} playerObj={playerObj} />
 					</Grid>
-					<Grid container item xs={12} spacing={3}>
+					<Grid container item xs={14} md={14} lg={12} spacing={1}>
 						<StatsCardRow rowNum={2} playerObj={playerObj} />
 					</Grid>
-					<Grid container item xs={12} spacing={3}>
+					<Grid container item xs={14} md={14} lg={12} spacing={1}>
 						<StatsCardRow rowNum={3} playerObj={playerObj} />
 					</Grid>
 				</Grid>

@@ -1,29 +1,26 @@
 import React, { useState } from 'react';
-import { emphasize, withStyles } from '@material-ui/core/styles';
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Chip from '@material-ui/core/Chip';
+import { emphasize, withStyles, Breadcrumbs, Chip, Container } from '@material-ui/core';
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
-import Container from '@material-ui/core/Container';
 
 import './VideoHighlights.css';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 const StyledBreadcrumb = withStyles((theme) => ({
 	root: {
-		backgroundColor: theme.palette,
+		backgroundColor: theme.palette.secondary.main,
 		height: theme.spacing(5),
-		color: '#00000',
+		color: theme.palette.text.primary,
 		fontWeight: theme.typography.fontWeightRegular,
 		fontSize: 16,
 		'&:hover, &:focus': {
-			backgroundColor: theme.palette.grey[500]
+			backgroundColor: theme.palette.secondary.dark
 		},
 		'&:active': {
 			boxShadow: theme.shadows[1],
 			backgroundColor: emphasize(theme.palette.grey[300], 0.12)
 		}
 	}
-}))(Chip); // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
+}))(Chip);
 
 const fontStyle = {
 	color: `#fff`

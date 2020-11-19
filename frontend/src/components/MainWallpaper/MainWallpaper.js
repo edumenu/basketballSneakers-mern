@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import Paper from '@material-ui/core/Paper';
 import { useTransition, animated, config } from 'react-spring';
 import img1 from '../../images/lebron.jpg';
 import img2 from '../../images/kobe.jpg';
@@ -20,11 +19,9 @@ function MainWallpaper() {
 	useEffect(() => void setInterval(() => set((state) => (state + 1) % 4), 19000), []);
 	return (
 		<div>
-			{/* <Paper style={{ height: '80vh', width: '100%', backgroundColor: '#80d4f7' }}> */}
 			{transitions.map(({ item, props, key }) => (
 				<animated.div key={key} className='bg' style={{ ...props, backgroundImage: `url(${item.url})` }} />
 			))}
-			{/* </Paper> */}
 		</div>
 	);
 }

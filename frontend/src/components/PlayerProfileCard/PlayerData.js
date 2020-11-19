@@ -16,7 +16,9 @@ export const playerData = [
 				TotalFreeThrows: 7327,
 				TotalBlocks: 893,
 				TotalSteals: 2514,
-				TotalMinutes: 41011,
+				TotalMinutes: 41011
+			},
+			{
 				name: 'Michael Jordan',
 				Birthday: 'February 17, 1963',
 				Hometown: 'Brooklyn, New York',
@@ -34,7 +36,9 @@ export const playerData = [
 				TotalFreeThrows: 8378,
 				TotalBlocks: 640,
 				TotalSteals: 1944,
-				TotalMinutes: 48637,
+				TotalMinutes: 48637
+			},
+			{
 				name: 'Kobe Bryant',
 				Birthday: '	August 23, 1978',
 				Hometown: 'Philadelphia, Pennsylvania',
@@ -52,7 +56,9 @@ export const playerData = [
 				TotalFreeThrows: 7404,
 				TotalBlocks: 957,
 				TotalSteals: 2015,
-				TotalMinutes: 48551,
+				TotalMinutes: 48551
+			},
+			{
 				name: 'Lebron James',
 				Birthday: 'December 30, 1984',
 				Hometown: 'Hometown: Akron, Ohio',
@@ -70,7 +76,9 @@ export const playerData = [
 				TotalFreeThrows: 2031,
 				TotalBlocks: 187,
 				TotalSteals: 699,
-				TotalMinutes: 17827,
+				TotalMinutes: 17827
+			},
+			{
 				name: 'Kyrie Irving',
 				Birthday: 'March 23, 1992',
 				Hometown: 'Melbourne, Australia',

@@ -1,0 +1,14 @@
+.sideTab {
+	width: 40vh;
+}
+@media only screen and (max-width: 1200px) {
+	.sideTab {
+		width: 70vh;
+	}
+}
+@media only screen and (max-width: 800px) {
+	.sideTab {
+		width: 65vh;
+		overflow: scroll;
+	}
+}

@@ -1,34 +1,72 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import orange from '@material-ui/core/colors/orange';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
+import { getInitialMode } from './HelperFunctions/HelperFunction1';
 
 function App() {
-	const theme = createMuiTheme({
+	const [ darkMode, setDarkMode ] = useState(getInitialMode());
+
+	useEffect(
+		() => {
+			localStorage.setItem('dark', JSON.stringify(darkMode));
+		},
+		[ darkMode ]
+	);
+
+	const darkTheme = createMuiTheme({
 		palette: {
-			type: 'light',
+			type: 'dark',
 			primary: {
-				// light: will be calculated from palette.primary.main,
-				main: '#212121'
-				// dark: will be calculated from palette.primary.main,
-				// contrastText: will be calculated to contrast with palette.primary.main
+				light: '#c95145',
+				main: '#931F1D',
+				dark: '#5f0000'
 			},
-			secondary: orange
+			secondary: {
+				light: '#ffcd55',
+				main: '#E99C20',
+				dark: '#b26e00'
+			},
+			background: {
+				paper: '#17141d',
+				custom: '#201d26'
+			},
+			text: {
+				primary: '#ffffff',
+				secondary: '#000000'
+			}
 		}
 	});
 
+	const lightTheme = createMuiTheme({
+		palette: {
+			type: 'light',
+			primary: {
+				light: '#c95145',
+				main: '#931F1D',
+				dark: '#5f0000'
+			},
+			secondary: {
+				light: '#ffcd55',
+				main: '#E99C20',
+				dark: '#b26e00'
+			}
+		}
+	});
+
+	const switchChange = () => {
+		setDarkMode(!darkMode);
+	};
+
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
 			<Router>
 				<div className='App'>
-					<Navbar />
-					<Paper style={{ height: '100vh', width: '100%' }}>
-						<Home />
-					</Paper>
+					<Navbar darkMode={darkMode} switchChange={switchChange} />
+					<Home darkMode={darkMode} />
 				</div>
 			</Router>
 		</ThemeProvider>

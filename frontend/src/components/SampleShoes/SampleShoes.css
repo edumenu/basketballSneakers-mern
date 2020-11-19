@@ -1,11 +1,6 @@
-/* a {
-	text-decoration: none;
-} */
-
 .shoeCard-list {
 	display: flex; /*Placing shoeCard horizontally*/
 	padding: 1rem 7rem;
-	/* overflow-x: scroll; Overflow x property */
 	height: 600px;
 	width: 100%;
 }
@@ -20,18 +15,12 @@
 	box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
 }
 
-.shoeCard-list::-webkit-scrollbar-track {
-	/* background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d); */
-}
-
 .shoeCard {
 	height: 60vh;
 	width: 25vw;
 	min-width: 250px;
 	padding: 1.5rem; /*space between each shoeCard*/
 	border-radius: 16px;
-	background: #1f242a;
-	box-shadow: -1rem 0 3rem #000;
 	display: flex; /*Placing shoeCard horizontally*/
 	flex-direction: column; /*Each individual shoeCardy*/
 	transition: .2s;
@@ -45,6 +34,16 @@
 .shoeCard:hover ~ .shoeCard {
 	/*Select all siblings after the hovered shoeCard*/
 	transform: translateX(130px);
+}
+
+.shoeCardDark {
+	background: #201d26;
+	box-shadow: -1rem 0 1rem #2a272f;
+}
+
+.shoeCardLight {
+	background: #f5f5f5;
+	box-shadow: -1rem 0 1rem rgb(161, 161, 161);
 }
 
 @media only screen and (max-width: 900px) {
@@ -90,20 +89,12 @@
 .shoeCard-header p {
 	font-size: 14px;
 	margin: 0 0 1rem;
-	color: #7a7a8c;
 }
 
 .shoeCard-header h2 {
 	font-size: 20px;
-	/* margin: .25rem 0 auto; */
-	/* text-decoration: none; */
-	/* color: inherit; */
 	border: 0;
-	/* display: inline-block; */
 	cursor: pointer;
-	/* background: linear-gradient(90deg, #ff8a00, #e52e71); */
-	background-color: white;
-	/* text-shadow: none; */
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -116,11 +107,9 @@
 }
 
 .shoeCard-author {
-	/* margin: 10 0; */
 	display: grid;
 	grid-template-columns: 5px 1fr;
 	align-items: center;
-	/* position: relative; */
 	margin-bottom: 15px;
 }
 

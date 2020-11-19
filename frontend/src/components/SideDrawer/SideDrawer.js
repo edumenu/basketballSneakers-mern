@@ -1,20 +1,18 @@
-import { Drawer, IconButton, List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Drawer, IconButton, List, ListItem, ListItemText, ListItemIcon, Icon, makeStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import Icon from '@material-ui/core/Icon';
 import React from 'react';
 import { useState } from 'react';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	list: {
 		width: 250
 	},
 	linkText: {
 		textDecoration: `none`,
 		textTransform: `uppercase`,
-		color: `black`
+		color: theme.palette.text.primary
 	}
-});
+}));
 
 const SideDrawer = ({ navLinks }) => {
 	const classes = useStyles();
@@ -40,7 +38,6 @@ const SideDrawer = ({ navLinks }) => {
 					<a href={path} key={title} className={classes.linkText}>
 						<ListItem button>
 							<ListItemIcon>
-								{/* <MailIcon /> */}
 								<Icon>{icon}</Icon>
 							</ListItemIcon>
 

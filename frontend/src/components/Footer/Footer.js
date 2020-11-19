@@ -4,8 +4,7 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		flexGrow: 1,
-		color: '#fff'
+		flexGrow: 1
 	},
 	gridStyle: {
 		marginTop: '2em'
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 	linkStyle: {
 		fontSize: '1.2em',
 		textDecoration: 'none',
-		color: '#fff',
+		color: theme.palette.text.primary,
 		marginTop: '10px'
 	}
 }));
@@ -44,7 +43,7 @@ export default function Footer() {
 						{props.gridHeader !== 'About Us ' ? props.firstRowData : ''}
 					</a>
 				</Grid>
-				<Grid item>
+				<Grid className={classes.gridFirstItem} item>
 					<a
 						className={classes.linkStyle}
 						href={props.gridHeader !== 'About Us ' ? props.sendRowLink : ''}
@@ -54,7 +53,7 @@ export default function Footer() {
 						{props.gridHeader !== 'About Us ' ? props.sendRowData : ''}
 					</a>
 				</Grid>
-				<Grid item>
+				<Grid className={classes.gridFirstItem} item>
 					<a
 						className={classes.linkStyle}
 						href={props.gridHeader !== 'About Us ' ? props.thrdRowLink : ''}
@@ -64,7 +63,7 @@ export default function Footer() {
 						{props.gridHeader !== 'About Us ' ? props.thrdRowData : ''}
 					</a>
 				</Grid>
-				<Grid item>
+				<Grid className={classes.gridFirstItem} item>
 					<a
 						className={classes.linkStyle}
 						href={props.gridHeader !== 'About Us ' ? props.fourthRowLink : ''}

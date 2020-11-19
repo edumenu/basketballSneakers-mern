@@ -1,34 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-
-const useStyles = makeStyles((theme) => ({
-	root: {
-		flexGrow: 1
-	},
-	paper: {
-		padding: theme.spacing(1),
-		textAlign: 'center',
-		color: theme.palette.text.secondary
-	},
-	paperContent: {
-		padding: '1em'
-	}
-}));
+import { makeStyles, Divider, Typography, Grid, Paper } from '@material-ui/core';
+import { getInitialMode } from '../../HelperFunctions/HelperFunction1';
 
 const StatsCardRow = (props) => {
-	const classes = useStyles();
 	const [ playerData, setPlayerData ] = useState({});
+	const [ darkMode, setDarkMode ] = useState(getInitialMode());
 
 	useEffect(
 		() => {
 			statValue(props.playerObj, props.rowNum);
+			localStorage.setItem('dark', JSON.stringify(darkMode));
 		},
 		[ props ]
 	);
+
+	const useStyles = makeStyles((theme) => ({
+		root: {
+			flexGrow: 1
+		},
+		paper: {
+			padding: theme.spacing(1),
+			textAlign: 'center',
+			color: theme.palette.text.primary,
+			backgroundColor: darkMode ? theme.palette.background.custom : ''
+		},
+		paperContent: {
+			padding: '1em'
+		},
+		title: {
+			color: theme.palette.primary.main
+		}
+	}));
+
+	const classes = useStyles();
 
 	const statValue = (playerObj, rowNum) => {
 		if (Object.keys(playerObj).length === 0) return null;
@@ -44,7 +48,7 @@ const StatsCardRow = (props) => {
 				playerData.map((data, index) => (
 					<Grid item xs={4}>
 						<Paper className={classes.paper} elevation={3}>
-							<Typography variant='subtitle1' className={classes.title} color='textSecondary' gutterBottom>
+							<Typography variant='subtitle1' className={classes.title} gutterBottom>
 								{index === 0 && props.rowNum === 1 ? (
 									'Total Games played'
 								) : index === 0 && props.rowNum === 2 ? (
@@ -74,7 +78,7 @@ const StatsCardRow = (props) => {
 								)}
 							</Typography>
 							<Divider variant='middle' />
-							<Typography variant='h5' className={classes.paperContent}>
+							<Typography variant='h6' className={classes.paperContent}>
 								{data}
 							</Typography>
 						</Paper>

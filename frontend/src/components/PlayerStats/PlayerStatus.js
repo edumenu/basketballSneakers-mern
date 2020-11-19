@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles, Tabs, Tab, Container } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
 
 import PlayerProfileCard from '../PlayerProfileCard/PlayerProfileCard';
-import { isWidthDown } from '@material-ui/core';
+import './PlayerStats.css';
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -50,13 +46,9 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		height: '100vh'
 	},
-	tabs: {
-		borderRight: `2px solid ${theme.palette.divider}`,
-		width: '35vw'
-	},
 	tab: {
-		marginTop: '2vw',
-		fontSize: '1.1em'
+		marginTop: '3vw',
+		fontSize: '1em'
 	}
 }));
 
@@ -77,7 +69,7 @@ export default function VerticalTabs() {
 					value={value}
 					onChange={handleChange}
 					aria-label='Vertical tabs wrapped'
-					className={classes.tabs}
+					className='sideTab'
 				>
 					<Tab className={classes.tab} label='Michael Jordan' {...a11yProps(0)} />
 					<Tab className={classes.tab} label='Kobe Bryant' {...a11yProps(1)} />

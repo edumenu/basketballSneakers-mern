@@ -1,25 +1,15 @@
-import {
-	AppBar,
-	Container,
-	Hidden,
-	IconButton,
-	List,
-	ListItem,
-	ListItemText,
-	makeStyles,
-	Toolbar,
-	Fab
-} from '@material-ui/core';
+import { AppBar, Container, Hidden, IconButton, List, ListItem, ListItemText } from '@material-ui/core';
+import { makeStyles, Toolbar, Switch, Fab, FormControlLabel, Paper } from '@material-ui/core';
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
-// import HomeIcon from '@material-ui/icons/Home';
+import WbSunnyIcon from '@material-ui/icons/WbSunny';
+import Brightness2Icon from '@material-ui/icons/Brightness2';
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
 import BackToTop from '../BackToTop/BackToTop';
 import HideOnScroll from '../HideOnScroll/HideOnScroll';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import logo from '../../images/logo.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	navbarDisplayFlex: {
 		display: `flex`,
 		justifyContent: `space-between`
@@ -30,11 +20,14 @@ const useStyles = makeStyles({
 	},
 	linkText: {
 		textDecoration: `none`,
-		textTransform: `uppercase`,
+		borderRadius: `25%`,
 		color: `white`,
 		fontSize: 15
+	},
+	sunnyIcon: {
+		color: theme.palette.secondary.main
 	}
-});
+}));
 
 const navLinks = [
 	{ title: `Shoe samples`, path: `#sample-sneakers`, icon: `sports_basketball` },
@@ -45,25 +38,33 @@ const navLinks = [
 	{ title: `signup`, path: `/signup`, icon: `person_add` }
 ];
 
-const Header = () => {
+const Header = (props) => {
 	const classes = useStyles();
 
 	return (
 		<React.Fragment>
 			<Paper>
 				<HideOnScroll>
-					<AppBar position='fixed' style={{ backgroundColor: '#1f242a' }}>
+					<AppBar position='fixed'>
 						<Toolbar component='nav'>
 							<Container maxWidth='xl' className={classes.navbarDisplayFlex}>
 								<IconButton edge='start' aria-label='home'>
 									<a href='/' style={{ color: `white` }}>
-										{/* <HomeIcon fontSize='large' /> */}
 										<img src={logo} alt='logo' className='bottom-left' width='40vw' height='40vh' />
 									</a>
 								</IconButton>
 
 								<Hidden smDown>
 									<List component='nav' aria-labelledby='main navigation' className={classes.navListDisplayFlex}>
+										<FormControlLabel
+											value='bottom'
+											control={<Switch checked={props.darkMode} onChange={props.switchChange} color='secondary' />}
+											label={
+												props.darkMode === true ? <WbSunnyIcon className={classes.sunnyIcon} /> : <Brightness2Icon />
+											}
+											labelPlacement='start'
+											style={{ marginRight: '.5em' }}
+										/>
 										{navLinks.map(({ title, path }) => (
 											<a href={path} key={title} className={classes.linkText}>
 												<ListItem button>

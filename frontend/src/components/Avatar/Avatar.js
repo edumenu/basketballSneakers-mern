@@ -1,6 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
+import { makeStyles, Avatar } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -18,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
 		height: theme.spacing(10)
 	},
 	large: {
-		width: '20vw',
-		height: '40vh'
+		width: theme.spacing(30),
+		height: theme.spacing(30)
 	}
 }));
 
