@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import jordanProfile from '../../images/jordanProfile.jpg';
 import kobeProfile from '../../images/kobeProfile.jpg';
 import lebronProfile from '../../images/lebronProfile.jpg';

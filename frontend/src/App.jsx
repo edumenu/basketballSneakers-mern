@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 
-import Navbar from './components/Navbar/Navbar.jsx';
+import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import { getInitialMode } from './HelperFunctions/HelperFunction1';
 

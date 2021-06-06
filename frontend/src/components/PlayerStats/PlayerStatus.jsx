@@ -9,14 +9,13 @@ import Box from '@material-ui/core/Box';
 import PlayerProfileCard from '../PlayerProfileCard/PlayerProfileCard';
 import './PlayerStats.css';
 
-function TabPanel({ value, index, other }) {
+function TabPanel({ value, index }) {
   return (
     <div
       role="tabpanel"
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
-      {...other}
     >
       {value === index && (
       <Box p={1}>
@@ -28,9 +27,8 @@ function TabPanel({ value, index, other }) {
 }
 
 TabPanel.propTypes = {
-  other: PropTypes.node.isRequired,
   index: PropTypes.number.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 function a11yProps(index) {

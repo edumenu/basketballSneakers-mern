@@ -81,15 +81,15 @@ export default function Footer() {
   );
 
   FormRow.propTypes = {
-    gridHeader: PropTypes.string.isRequired,
-    firstRowLink: PropTypes.string.isRequired,
-    firstRowData: PropTypes.string.isRequired,
-    sendRowLink: PropTypes.string.isRequired,
-    sendRowData: PropTypes.string.isRequired,
-    thrdRowLink: PropTypes.string.isRequired,
-    thrdRowData: PropTypes.string.isRequired,
-    fourthRowLink: PropTypes.string.isRequired,
-    fourthRowData: PropTypes.string.isRequired,
+    gridHeader: PropTypes.string,
+    firstRowLink: PropTypes.string,
+    firstRowData: PropTypes.string,
+    sendRowLink: PropTypes.string,
+    sendRowData: PropTypes.string,
+    thrdRowLink: PropTypes.string,
+    thrdRowData: PropTypes.string,
+    fourthRowLink: PropTypes.string,
+    fourthRowData: PropTypes.string,
   };
 
   return (

@@ -65,7 +65,7 @@ const SideDrawer = ({ navLinks }) => {
 };
 
 SideDrawer.propTypes = {
-  navLinks: PropTypes.shape.isRequired,
+  navLinks: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default SideDrawer;

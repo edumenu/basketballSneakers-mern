@@ -97,7 +97,7 @@ const StatsCardRow = ({ playerObj, rowNum }) => {
 };
 
 StatsCardRow.propTypes = {
-  playerObj: PropTypes.shape.isRequired,
+  playerObj: PropTypes.objectOf(PropTypes.number).isRequired,
   rowNum: PropTypes.number.isRequired,
 };
 

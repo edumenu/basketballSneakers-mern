@@ -46,7 +46,7 @@ const SampleShoes = ({ darkMode }) => (
 );
 
 SampleShoes.propTypes = {
-  darkMode: PropTypes.bool.isRequired,
+  darkMode: PropTypes.objectOf(PropTypes.bool).isRequired,
 };
 
 export default SampleShoes;

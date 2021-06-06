@@ -73,7 +73,7 @@ export default function PlayerProfileCard({ tabIndex }) {
     <div>
       <div className={classes.root}>
         <Grid container spacing={1}>
-          <Grid item xs={10} md={4} lg={4} alignItems="start" className={classes.playerStats}>
+          <Grid item xs={10} md={4} lg={4} alignItems="flex-start" className={classes.playerStats}>
             <Avatar
               imageUrl={Object.keys(playerObj).length === 0 ? avatar : playerObj[0].profileImage}
               imageSize="large"
@@ -121,13 +121,13 @@ export default function PlayerProfileCard({ tabIndex }) {
               </List>
             </div>
           </Grid>
-          <Grid container item xs={14} md={14} lg={12} spacing={1}>
+          <Grid container item xs={12} md={12} lg={12} spacing={1}>
             <StatsCardRow rowNum={1} playerObj={playerObj} />
           </Grid>
-          <Grid container item xs={14} md={14} lg={12} spacing={1}>
+          <Grid container item xs={12} md={12} lg={12} spacing={1}>
             <StatsCardRow rowNum={2} playerObj={playerObj} />
           </Grid>
-          <Grid container item xs={14} md={14} lg={12} spacing={1}>
+          <Grid container item xs={12} md={12} lg={12} spacing={1}>
             <StatsCardRow rowNum={3} playerObj={playerObj} />
           </Grid>
         </Grid>

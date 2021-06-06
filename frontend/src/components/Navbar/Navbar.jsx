@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   sunnyIcon: {
     color: theme.palette.secondary.main,
   },
-}));
+})); //
 
 const navLinks = [
   { title: 'Shoe samples', path: '#sample-sneakers', icon: 'sports_basketball' },
