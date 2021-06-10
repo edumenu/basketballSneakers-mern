@@ -25,13 +25,18 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Home = (darkMode) => {
+const Home = darkMode => {
   const classes = useStyles();
 
   return (
     <div>
       <div>
-        <Grid container direction="column" justify="flex-start" alignItems="stretch">
+        <Grid
+          container
+          direction="column"
+          justify="flex-start"
+          alignItems="stretch"
+        >
           <Grid item>
             <Paper className={classes.section}>
               <MainWallpaper />
@@ -43,7 +48,10 @@ const Home = (darkMode) => {
             </Paper>
           </Grid>
           <Grid item>
-            <Paper className={classes.section} style={{ backgroundColor: '#000000' }}>
+            <Paper
+              className={classes.section}
+              style={{ backgroundColor: '#000000' }}
+            >
               <VideoHighlights darkMode={darkMode} />
             </Paper>
           </Grid>
@@ -53,7 +61,9 @@ const Home = (darkMode) => {
             </Paper>
           </Grid>
           <Grid item>
-            <Paper className={darkMode ? classes.footer : classes.footerBackground}>
+            <Paper
+              className={darkMode ? classes.footer : classes.footerBackground}
+            >
               <Footer />
             </Paper>
           </Grid>

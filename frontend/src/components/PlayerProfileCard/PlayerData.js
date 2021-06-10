@@ -62,7 +62,8 @@ export const playerData = [
         name: 'Lebron James',
         Birthday: 'December 30, 1984',
         Hometown: 'Hometown: Akron, Ohio',
-        Position: 'Position: Power Forward, Point Guard, Small Forward, Shooting Guard',
+        Position:
+          'Position: Power Forward, Point Guard, Small Forward, Shooting Guard',
       },
     ],
     Kyrie: [
