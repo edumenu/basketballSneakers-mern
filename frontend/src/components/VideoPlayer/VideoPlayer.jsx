@@ -2,7 +2,7 @@ import React from 'react';
 import ReactPlayer from 'react-player/lazy';
 import PropTypes from 'prop-types';
 
-import './VideoPlayer.css';
+import './VideoPlayer.scss';
 
 function VideoPlayer({ urlIndex }) {
   const videoUrl = [

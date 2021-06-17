@@ -7,7 +7,7 @@ import VideoHighlights from '../../components/VideoHighlights/VideoHighlights';
 import PlayerStatus from '../../components/PlayerStats/PlayerStatus';
 import Footer from '../../components/Footer/Footer';
 
-import './Home.css';
+import './Home.scss';
 
 const useStyles = makeStyles(() => ({
   root: {

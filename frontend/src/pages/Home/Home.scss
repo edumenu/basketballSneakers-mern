@@ -1,0 +1,16 @@
+@import '../../../utilities/variables';
+
+.sectionStats {
+  height: 92vh;
+}
+@media only screen and (max-width: 1200px) {
+  .sectionStats {
+    height: 110vh;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .sectionStats {
+    height: 140vh;
+    overflow: scroll;
+  }
+}

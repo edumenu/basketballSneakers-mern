@@ -1,13 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  makeStyles, Tabs, Tab, Container,
-} from '@material-ui/core';
+import { makeStyles, Tabs, Tab, Container } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 
 import PlayerProfileCard from '../PlayerProfileCard/PlayerProfileCard';
-import './PlayerStats.css';
+import './PlayerStats.scss';
 
 function TabPanel({ value, index }) {
   return (
@@ -18,9 +16,9 @@ function TabPanel({ value, index }) {
       aria-labelledby={`vertical-tab-${index}`}
     >
       {value === index && (
-      <Box p={1}>
-        <PlayerProfileCard tabIndex={index} />
-      </Box>
+        <Box p={1}>
+          <PlayerProfileCard tabIndex={index} />
+        </Box>
       )}
     </div>
   );
@@ -38,7 +36,7 @@ function a11yProps(index) {
   };
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 2,
     backgroundColor: theme.palette.background.paper,
@@ -70,7 +68,11 @@ export default function VerticalTabs() {
           aria-label="Vertical tabs wrapped"
           className="sideTab"
         >
-          <Tab className={classes.tab} label="Michael Jordan" {...a11yProps(0)} />
+          <Tab
+            className={classes.tab}
+            label="Michael Jordan"
+            {...a11yProps(0)}
+          />
           <Tab className={classes.tab} label="Kobe Bryant" {...a11yProps(1)} />
           <Tab className={classes.tab} label="Lebron James" {...a11yProps(2)} />
           <Tab className={classes.tab} label="Kyrie Irving" {...a11yProps(3)} />
