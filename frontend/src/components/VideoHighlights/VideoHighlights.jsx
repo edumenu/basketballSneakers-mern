@@ -1,14 +1,18 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import {
-  emphasize, withStyles, Breadcrumbs, Chip, Container,
+  emphasize,
+  withStyles,
+  Breadcrumbs,
+  Chip,
+  Container,
 } from '@material-ui/core';
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
 
-import './VideoHighlights.css';
+import './VideoHighlights.scss';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
-const StyledBreadcrumb = withStyles((theme) => ({
+const StyledBreadcrumb = withStyles(theme => ({
   root: {
     backgroundColor: theme.palette.secondary.main,
     height: theme.spacing(5),
@@ -37,7 +41,12 @@ const CustomizedBreadcrumbs = () => {
     setUrlIndex(urlNum);
   }
 
-  const breadCrumbs = [{ label: 'Jordan' }, { label: 'Kobe' }, { label: 'Lebron' }, { label: 'Kyrie' }];
+  const breadCrumbs = [
+    { label: 'Jordan' },
+    { label: 'Kobe' },
+    { label: 'Lebron' },
+    { label: 'Kyrie' },
+  ];
 
   return (
     <div className="breadCrumbs">
@@ -50,7 +59,7 @@ const CustomizedBreadcrumbs = () => {
               href="#"
               label={label}
               icon={<SportsBasketballIcon fontSize="small" />}
-              onClick={(e) => handleClick(e, index)}
+              onClick={e => handleClick(e, index)}
             />
           ))}
         </Breadcrumbs>

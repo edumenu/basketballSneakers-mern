@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import './SampleShoes.css';
+import './SampleShoes.scss';
 import PropTypes from 'prop-types';
 
 const SampleShoes = ({ darkMode }) => (

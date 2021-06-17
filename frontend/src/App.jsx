@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 
@@ -10,12 +10,9 @@ import { getInitialMode } from './HelperFunctions/HelperFunction1';
 function App() {
   const [darkMode, setDarkMode] = useState(getInitialMode());
 
-  useEffect(
-    () => {
-      localStorage.setItem('dark', JSON.stringify(darkMode));
-    },
-    [darkMode],
-  );
+  useEffect(() => {
+    localStorage.setItem('dark', JSON.stringify(darkMode));
+  }, [darkMode]);
 
   const darkTheme = createMuiTheme({
     palette: {
